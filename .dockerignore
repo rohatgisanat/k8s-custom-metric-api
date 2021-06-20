@@ -1,0 +1,6 @@
+.*
+charts/
+Dockerfile
+venv/
+*.iml
+*.tar
