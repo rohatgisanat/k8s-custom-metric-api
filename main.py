@@ -3,9 +3,6 @@ import json
 from datetime import datetime
 app = Flask(__name__)
 
-@app.route("/apis/custom.metrics.k8s.io/v1beta1")
-def list1():
-    return "okay";
 @app.route("/apis/custom.metrics.k8s.io/v1beta1/namespaces/custom-metrics-api/services/custom-metrics-api/second")
 def list():
     data = json.loads( open ('metricValueList.json', "r").read())

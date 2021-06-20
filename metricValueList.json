@@ -10,7 +10,7 @@
         "namespace": "custom-metrics-api"
       },
       "metricName": "second",
-      "timestamp": "sasa",
+      "timestamp": "",
       "windowSeconds": "10",
       "value": "10"
     }
