@@ -37,14 +37,16 @@ spec:
             - name: http
               containerPort: 5000
               protocol: TCP
-          #livenessProbe:
-          #  httpGet:
-          #    path: /apis/custom.metrics.k8s.io/v1beta1
-          #    port: http
-          #readinessProbe:
-          #  httpGet:
-          #    path: /apis/custom.metrics.k8s.io/v1beta1
-          #    port: http
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+              scheme: HTTPS
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+              scheme: HTTPS
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
