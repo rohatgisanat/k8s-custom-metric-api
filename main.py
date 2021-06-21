@@ -12,6 +12,10 @@ def list():
     data["items"][0]["timestamp"]=timestamp
     return data;
 
+@app.route("/apis/custom.metrics.k8s.io/v1beta1")
+def metrichealth():
+    return "okay";
+
 @app.route("/healthz",methods=['GET'])
 def healthz():
     return "healthy"
